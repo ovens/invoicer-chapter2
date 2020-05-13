@@ -44,5 +44,5 @@ jobs:
            docker build -t ${DOCKER_REPO}/${CIRCLE_PROJECT_REPONAME} .;
            docker images --no-trunc | awk '/^app/ {print $3}' | \
              sudo tee $CIRCLE_ARTIFACTS/docker-image-shasum256.txt;
-           docker push testtest2222/invoicer-chapter2:tagname;
+           docker push ${DOCKER_REPO}/${CIRCLE_PROJECT_REPONAME};
          fi
